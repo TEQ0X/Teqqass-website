@@ -1,0 +1,7 @@
+pyTelegramBotAPI
+flask
+requests
+pycryptodome
+brotli
+urllib3
+waitress>=3.0,<4

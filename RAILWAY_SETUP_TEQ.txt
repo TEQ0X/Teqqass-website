@@ -1,0 +1,28 @@
+TEQ PREMIUM BOT — RAILWAY DEPLOYMENT
+
+This is a rebranded copy of the supplied CPM1 Telegram Mini App project.
+
+Railway service settings:
+- Deploy from this repository (upload the extracted folder to a private GitHub repository first).
+- Start command: python bot.py (Procfile is included). The process runs Waitress for HTTP and a separate Telegram polling thread.
+- Set these Variables before deployment:
+  BOT_TOKEN = your NEW Telegram bot token from @BotFather
+  ADMIN_IDS = 8707329800
+  WEBAPP_URL = your Railway public HTTPS domain (no trailing slash)
+  SECRET_KEY = a long random secret
+
+Optional source-account car-unlock feature (only if you own/control that account):
+  CPM1_SOURCE_EMAIL = your source account email
+  CPM1_SOURCE_PASSWORD = your source account password
+
+Optional payment variables (leave blank until you configure your own):
+  PAY_GCASH_NAME, PAY_GCASH, PAY_PAYPAL, PAY_OTHER, PAY_NOTE
+
+Important:
+- Do not commit real tokens, passwords, or API keys to GitHub.
+- The old bot token fallback, previous admin IDs, previous GCash recipient details, and previous Mini App URL have been removed from bot.py. A previously embedded CPM1 source-account credential has also been removed; configure the optional CPM1_SOURCE_EMAIL and CPM1_SOURCE_PASSWORD variables only for an account you control.
+- The CPM1 game-service/API integration is still the original project's integration; this rebrand does not transfer ownership of that third-party service or guarantee its continued compatibility.
+- Review the original project's license/sale terms and use only API access you are authorized to use.
+- Railway's ephemeral filesystem may not preserve SQLite data across redeploys/restarts; attach a persistent volume and configure storage if user/subscription data must persist.
+
+The website remains Telegram Mini App-only: it requires a valid Telegram Web App session.
